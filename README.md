@@ -1,6 +1,5 @@
-# instaBackend
 
-Simple Instagram Like Social media Backend using Spring Boot, JPA , Mysql
+Simple Instagram Like Social media using Spring Boot, JPA , Mysql, Angular
 
 – Users can register the system.
 – Users can log in and log out of the system.
