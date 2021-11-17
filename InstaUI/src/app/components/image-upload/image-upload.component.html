@@ -1,0 +1,39 @@
+<app-header></app-header>
+<div class="uploadComp">
+  <h2>Upload your Images</h2>
+  <form [formGroup] = "form" (ngSubmit) = "onClickSubmit()">
+    <div class="form-group">
+      <label for="UploadImage">Upload Your Image</label>
+      <input type="file" class="form-control-file" id="UploadImage"  [ngClass]="{ 'is-invalid': submitted && f.image.errors }" (change)="imageclicked($event)" required>
+      <div *ngIf="submitted && f.image.errors" class="invalid-feedback">
+        <div *ngIf="f.image.errors.required">Last Name is required</div>
+    </div>
+    </div>
+    <div class="form-group">
+      <label for="exampleInputEmail1">Title</label>
+      <input type="text" class="form-control" placeholder="Enter Title" [ngClass]="{ 'is-invalid': submitted && f.title.errors }" formControlName="title" required>
+      <div *ngIf="submitted && f.title.errors" class="invalid-feedback">
+        <div *ngIf="f.title.errors.required">Title is required</div>
+    </div>
+    </div>
+    <div class="form-group">
+      <label for="description">Description</label>
+      <input type="text" class="form-control" id="description" formControlName="description"  placeholder="Image Descripton">
+    </div>
+    <div class="form-group">
+      <label for="tags">Tags</label>
+      <input type="text" class="form-control" id="tags" formControlName="tags" placeholder="Tag your mates">
+    </div>
+    <div class="form-group">
+      <label for="picdetails">Picture Details</label>
+      <input type="text" class="form-control" id="picdetails" formControlName="pictureDetails" placeholder="Picture Details">
+    </div>
+    <div class="form-group ">
+      <label for="picdetails">Visibility </label>
+      <mat-slide-toggle  formControlName="visibility"></mat-slide-toggle>
+    </div>
+    
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+  
+</div>
