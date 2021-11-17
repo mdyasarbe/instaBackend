@@ -1,0 +1,61 @@
+<div class="headerComp">
+  <div class="menubar">
+    <nav class="navbar navbar-expand-md navbar-light bg-light">
+      <a class="navbar-brand"><img routerLink="/profile" src="assets/_Corporation-Logo.png"></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/profile">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/imageupload">Upload Image</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/mostdownload">Hottest Image</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/addfollowers">Add Followers</a>
+          </li>
+          <!-- <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Dropdown
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="#">Action</a>
+                    <a class="dropdown-item" href="#">Another action</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                  </div>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link disabled" href="#">Disabled</a>
+                </li>-->
+        </ul>
+        <div class="form-inline my-lg-0" style="padding-right: 25px;">
+          <input class="form-control mr-sm-2" type="text" placeholder="Search" (keyup.enter)="onSearch()" [(ngModel)]="searchText" aria-label="Search">
+          <button  mat-mini-fab color="primary"  aria-label="Search" (click)="onSearch()" >
+            <mat-icon>search</mat-icon>
+          </button>
+
+        </div>
+
+        <button mat-mini-fab color="primary"  [matMenuTriggerFor]="menu" aria-label="Profile actions">
+          <mat-icon>account_circle</mat-icon>
+        </button>
+        <mat-menu #menu="matMenu">
+          <button  mat-menu-item>
+            <span>Profile</span>
+          </button>
+          <button mat-menu-item>
+            <span (click)="logout()">Logout</span>
+          </button>
+        </mat-menu>
+
+      </div>
+    </nav>
+  </div>
+</div>

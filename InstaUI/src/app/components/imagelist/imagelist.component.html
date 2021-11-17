@@ -1,0 +1,27 @@
+<div class="profileComp" >
+  <div *ngIf="(!loading) && images  && images.length>0">
+    <mat-card *ngFor="let img of images;index as i"  class="imageFlow">
+    <div class="username">{{img.userid.userFirstName}}</div>
+    <img class="tile-image" [src]="'assets/'+img.url" class="imageTile">
+    <button mat-raised-button color="basic" (click)="downloadImage(img.id)" class="downloadButton">
+        <mat-icon>get_app</mat-icon> {{img.numofdownloads}}
+    </button>
+    <div class="username">{{img.title}}</div>
+    <!-- <div style="text-align: left;">
+  {{img.description}}
+</div>
+<div style="text-align: left;">
+  {{img.tags}}
+</div>
+<div style="text-align: left;">
+  {{img.tags}}
+</div> -->
+</mat-card>
+</div>
+<div *ngIf="loading"> 
+    Loading...
+</div>
+<div *ngIf="(!loading) && images &&images.length==0 || !images "> 
+    No Images Found
+</div>
+</div>

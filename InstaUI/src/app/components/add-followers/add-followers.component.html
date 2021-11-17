@@ -1,0 +1,32 @@
+<app-header></app-header>
+<div class="followersTable">
+    
+      <table mat-table [dataSource]="dataSource"  class="mat-elevation-z8 demo-table">
+        <!-- firstName Column -->
+        <ng-container matColumnDef="firstName">
+          <th mat-header-cell *matHeaderCellDef style="text-align:center">Firstname</th>
+          <td mat-cell *matCellDef="let element" align="center">{{element.userFirstName}}</td>
+        </ng-container>
+      
+        <!-- lastName Column -->
+        <ng-container matColumnDef="lastName">
+          <th mat-header-cell *matHeaderCellDef style="text-align:center">Lastname</th>
+          <td mat-cell *matCellDef="let element" align="center">{{element.userLastName}}</td>
+        </ng-container>
+      
+        <ng-container matColumnDef="Add Followers" *ngIf="data">
+            <th mat-header-cell *matHeaderCellDef style="text-align:center" >Add Followers</th>
+            <td mat-cell *matCellDef="let element;index as i" align="center">
+                <button  *ngIf="!element.isFollowed" mat-raised-button (click)="addFollower({'userName':element.userName,'id':element.id})" class="demo-button">
+                Add Follower<mat-icon *ngIf="!element.isFollowed">person_add</mat-icon>
+              </button>
+              
+            </td> 
+           
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        <tr mat-row > <th colspan="3" *ngIf="!data||data.length==0">No Followers Available To Follow</th></tr>
+      </table>
+</div>

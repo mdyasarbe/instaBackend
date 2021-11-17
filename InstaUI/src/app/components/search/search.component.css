@@ -1,0 +1,29 @@
+/* .profileHeader{
+} */
+.profileComp,.imageFlow{
+  display:flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+}
+
+.username{
+  display:inline-flex;
+  align-self: flex-start;
+  font-weight: 500;
+}
+.imageTile{
+  width:400px;
+  height:400px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  
+}
+.downloadButton{
+  display:inline-flex;
+  align-self: flex-end;
+  width:100%;
+  justify-content: center;
+}
